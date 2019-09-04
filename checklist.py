@@ -33,9 +33,12 @@ def select(function_code):
     # Read item
     elif function_code == "R":
         item_index = int(input("Index Number?"))
-
         # Remember that item_index must actually exist or our program will crash.
         read(item_index)
+        return True
+    elif function_code == "M":
+        an = int(input("INPUT INDEX"))
+        mark_completed(an)
         return True
     # Print all items
     elif function_code == "P":
@@ -53,14 +56,13 @@ def test():
 
     list_all_items()
     select("R")
-
     list_all_items()
-
+    select("M")
 # Run Tests
 test()
 
 running = True
 while running:
     selection = user_input(
-        "Press C to add to list, R to Read from list, P to display list, and Q to quit")
+        "Press C to add to list, R to Read from list, P to display list, and Q to quit or M to mark")
     running = select(selection)
