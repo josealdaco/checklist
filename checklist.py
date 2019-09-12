@@ -44,6 +44,10 @@ def select(function_code):
     elif function_code == "P":
         list_all_items()
         return True
+    elif function_code == "D":
+        destroy_index = int(input("Index to destroy?:"))
+        destroy(destroy_index)
+        return True
     elif function_code == "Q":
         return False
     # Catch all
@@ -64,5 +68,5 @@ test()
 running = True
 while running:
     selection = user_input(
-        "Press C to add to list, R to Read from list, P to display list, and Q to quit or M to mark")
+        "Press C to add to list, R to Read from list, P to display list, D to destroy, and Q to quit or M to mark ")
     running = select(selection)
