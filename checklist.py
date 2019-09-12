@@ -1,4 +1,3 @@
-# Create our Checklist
 checklist = list()
 
 # Define Functions
@@ -19,7 +18,8 @@ def list_all_items():
         print(x)
 
 def mark_completed(index):
-    print("√" + checklist[index])
+    checklist[index] = "√" + checklist[index]
+    print(checklist[index])
 
 def user_input(prompt):
     user_input = input(prompt)
@@ -27,17 +27,17 @@ def user_input(prompt):
 
 def select(function_code):
     if function_code == "C":
-        an = input("Input Item")
+        an = input("Input Item:")
         create(an)
         return True
     # Read item
     elif function_code == "R":
-        item_index = int(input("Index Number?"))
+        item_index = int(input("Index Number?:"))
         # Remember that item_index must actually exist or our program will crash.
         read(item_index)
         return True
     elif function_code == "M":
-        an = int(input("INPUT INDEX"))
+        an = int(input("INPUT INDEX:"))
         mark_completed(an)
         return True
     # Print all items
